@@ -10,12 +10,12 @@ public class Demo {
         return student;
     }
 
-    public static Student createLowestChild() {
+    public static SpecialStudent createLowestChild() {
 
 
-        Student student = new SpecialStudent();
+        SpecialStudent specialStudent = new SpecialStudent();
         //SpecialStudent specialStudent = new SpecialStudent("100", 3, 123456789, 987654321, "colleg@gmail.com");
-        return student;
+        return specialStudent;
     }
 
     public static void main(String[] args) {
