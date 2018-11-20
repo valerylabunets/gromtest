@@ -12,7 +12,4 @@ public class SpecialStudent extends CollegeStudent {
     }
 
 
-    public SpecialStudent() {
-        super();
-    }
 }
