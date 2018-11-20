@@ -10,7 +10,7 @@ public class Demo {
 
     public static SpecialStudent createLowestChild() {
 
-        SpecialStudent specialStudent = new SpecialStudent;
+        SpecialStudent specialStudent = new SpecialStudent();
         return specialStudent;
     }
 
