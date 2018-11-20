@@ -4,7 +4,7 @@ public class Demo {
 
     public static Student createHighestParent() {
 
-        Student student = new CollegeStudent();
+        Student student = new Student();
         return student;
     }
 
