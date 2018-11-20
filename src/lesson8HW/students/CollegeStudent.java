@@ -19,5 +19,10 @@ public class CollegeStudent extends Student {
     public CollegeStudent() {
     }
 
-
+    public CollegeStudent(String firstName, String lastName, int group, Course[] coursesTaken, String collegeName, int rating, long id) {
+        super(firstName, lastName, group, coursesTaken);
+        this.collegeName = collegeName;
+        this.rating = rating;
+        this.id = id;
+    }
 }
