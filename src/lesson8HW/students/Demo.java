@@ -2,8 +2,6 @@ package lesson8HW.students;
 
 public class Demo {
 
-
-
     public static Student createHighestParent() {
 
         Student student = new Student();
@@ -12,9 +10,7 @@ public class Demo {
 
     public static SpecialStudent createLowestChild() {
 
-
-        SpecialStudent specialStudent = new SpecialStudent();
-        //SpecialStudent specialStudent = new SpecialStudent("100", 3, 123456789, 987654321, "colleg@gmail.com");
+        SpecialStudent specialStudent = (SpecialStudent) new Student();
         return specialStudent;
     }
 
