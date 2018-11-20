@@ -4,15 +4,17 @@ public class Demo {
 
 
 
-    public static Student createHighestParent() {
+    public static Object createHighestParent() {
 
-        Student student = new Student();
-        return student;
+        Object object = new Object();
+        return object;
     }
 
     public static SpecialStudent createLowestChild() {
 
-        SpecialStudent specialStudent = new SpecialStudent("100", 3, 123456789, 987654321, "colleg@gmail.com");
+
+        SpecialStudent specialStudent = new SpecialStudent();
+        //SpecialStudent specialStudent = new SpecialStudent("100", 3, 123456789, 987654321, "colleg@gmail.com");
         return specialStudent;
     }
 
