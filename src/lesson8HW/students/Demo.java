@@ -4,13 +4,13 @@ public class Demo {
 
     public static Student createHighestParent() {
 
-        Student student = new Student();
+        Student student = new CollegeStudent();
         return student;
     }
 
     public static SpecialStudent createLowestChild() {
 
-        SpecialStudent specialStudent = (SpecialStudent) new Student();
+        SpecialStudent specialStudent = new SpecialStudent;
         return specialStudent;
     }
 
