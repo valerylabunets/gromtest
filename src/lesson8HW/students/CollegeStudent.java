@@ -12,9 +12,9 @@ public class CollegeStudent extends Student {
         this.id = id;
     }
 
-//    public CollegeStudent(String firstName, String lastName, int group, Course[] coursesTaken) {
-//        super(firstName, lastName, group, coursesTaken);
-//    }
+    public CollegeStudent(String firstName, String lastName, int group, Course[] coursesTaken) {
+        super(firstName, lastName, group, coursesTaken);
+    }
 
     public CollegeStudent() {
     }
