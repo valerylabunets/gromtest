@@ -15,8 +15,8 @@ public class Demo {
     }
 
     public static void main(String[] args) {
-        System.out.println(createHighestParent().toString());
-        System.out.println(createLowestChild().toString());
+        System.out.println("HighestParent is " + createHighestParent().toString());
+        System.out.println("LowestChild is " + createLowestChild().toString());
 
     }
 }
