@@ -1,4 +1,4 @@
-package lesson8HW;
+package lesson8HW.arithmethic;
 
 public class Demo {
 
