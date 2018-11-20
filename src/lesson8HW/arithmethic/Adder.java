@@ -1,8 +1,7 @@
 package lesson8HW.arithmethic;
 
 public class Adder extends Arithmetic {
-    public int add(int a, int b) {
-        int sum = a + b;
-        return sum;
+    public long add(int a, int b) {
+        return (long)a + (long)b;
     }
 }
