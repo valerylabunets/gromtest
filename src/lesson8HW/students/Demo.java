@@ -4,7 +4,8 @@ public class Demo {
 
     public static Student createHighestParent() {
 
-        Student student = new Student("Ivan", "Bugrov", 10, null );
+
+        Student student = new Student("Ivan", "Bugrov", 10, new Course[]{});
         return student;
     }
 
