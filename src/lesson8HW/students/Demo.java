@@ -11,7 +11,7 @@ public class Demo {
 
     public static SpecialStudent createLowestChild() {
 
-        SpecialStudent specialStudent = new SpecialStudent(222222, "22222@gmail.com");
+        SpecialStudent specialStudent = new SpecialStudent("Denis", "Koval", 12, new Course[]{},222222, "22222@gmail.com");
         return specialStudent;
     }
 
