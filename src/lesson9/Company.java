@@ -9,6 +9,11 @@ public class Company {
 
     public int someField;
 
+    public Company(String name, String countryFounded) {
+        this.name = name;
+        this.countryFounded = countryFounded;
+    }
+
     public String getName() {
         return name;
     }
