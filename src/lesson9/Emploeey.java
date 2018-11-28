@@ -1,6 +1,6 @@
 package lesson9;
 
-public class Employee {
+class Employee {
 
     String name;
     Company company;

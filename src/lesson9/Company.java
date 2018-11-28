@@ -2,8 +2,8 @@ package lesson9;
 
 public class Company {
 
-    private String name;
-    private String countryFounded;
+    String name;
+    String countryFounded;
 
     protected String code;
 
@@ -12,6 +12,10 @@ public class Company {
     public Company(String name, String countryFounded) {
         this.name = name;
         this.countryFounded = countryFounded;
+    }
+
+    public Company() {
+
     }
 
     public String getName() {
