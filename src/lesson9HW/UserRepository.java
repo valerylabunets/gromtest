@@ -1,6 +1,7 @@
 package lesson9HW;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class UserRepository {
 
@@ -47,7 +48,6 @@ public class UserRepository {
     }
 
         public String getUserNameById(long id) { //для получения имени пользователя, по его id
-
             String result = null;
             for (User user : users) {
                 if (user != null && user.getId() == id) {
@@ -58,27 +58,77 @@ public class UserRepository {
             return result;
         }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(users);
-    }
+    //User repository, part 3
+    /* Возвращайте null, если юзера найти не удалось. Если юзеров несколько -  возвращайте первый
+       Методы должны быть доступны всем*/
 
     //нахождение юзера по имени
-    public String getUserByName(String name) {
+    public User getUserByName(String name) {
 
-        return null;
+        int count = 0;
+        int i = 0;
+        for (i = 0; i < users.length; i++) {
+            if (users[i] != null && users[i].getName().equals(name)) {
+                count++;
+            }
+        }
+        User result = null;
+        for (User user : users) {
+            if (user != null && user.getName().equals(name)) {
+                result = user;
+            } else {
+                if (user != null && user.getName().equals(name) && count > 1) {
+                    result = user;
+                }
+            }
+        }
+        return result;
     }
 
     //нахождение юзера по id
-    public long getUserById(long id) {
-
-        return 0;
+    private User findById(long id) {
+        int count = 0;
+        int i = 0;
+        for (i = 0; i < users.length; i++) {
+            if (users[i] != null && users[i].getId() == id) {
+                count++;
+            }
+        }
+        User result = null;
+        for (User user : users) {
+            if (user != null && user.getId() == id) {
+                result = user;
+            } else {
+                if (user != null && user.getId() == id && count > 1) {
+                    result = user;
+                }
+            }
+        }
+        return result;
     }
 
-    //нахождение юзера по essionId
-    public String getUserBySessionId(String sessionId) {
-
-        return null;
+    //нахождение юзера по sessionId
+    public User getUserBySessionId(String sessionId) {
+        int count = 0;
+        int i = 0;
+        for (i = 0; i < users.length; i++) {
+            if (users[i] != null && users[i].getSessionId().equals(sessionId)) {
+                count++;
+            }
+        }
+        User result = null;
+        for (User user : users) {
+            if (user != null && user.getSessionId().equals(sessionId)) {
+                result = user;
+            } else {
+                if (user != null && user.getName().equals(sessionId) && count > 1) {
+                    result = user;
+                }
+            }
+        }
+        return result;
     }
+
+
 
 }

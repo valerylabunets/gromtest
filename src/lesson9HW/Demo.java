@@ -21,6 +21,11 @@ public class Demo {//mmmmmmmm
         UserRepository userRepository = new UserRepository(users);
         System.out.println(Arrays.toString(userRepository.getUserNames()));
         System.out.println(Arrays.toString(userRepository.getUserIds()));
+        System.out.println(userRepository.getUserByName("Petro"));
+       // System.out.println(userRepository.getUserById(331));
+        System.out.println(userRepository.getUserBySessionId("009"));
+
+
 
     }
 }
