@@ -18,8 +18,9 @@ public class Demo {//mmmmmmmm
 //            return (users);
 //        }
 
-        UserRepository userRepository = new UserRepository();
-        System.out.println(userRepository.getUserNames().toString());
+        UserRepository userRepository = new UserRepository(users);
+        System.out.println(Arrays.toString(userRepository.getUserNames()));
+        System.out.println(Arrays.toString(userRepository.getUserIds()));
 
     }
 }

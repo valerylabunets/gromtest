@@ -10,41 +10,40 @@ public class UserRepository {
         this.users = users;
     }
 
-    public UserRepository() {
-    }
-
     public User[] getUsers() {
         return users;
     }
 
     public String[] getUserNames() {//получение массива имен пользователей
-        User user = new User();
         int count = 0;
-//        if (users[i].getName() != null) {
-//           count++;
-//        }
-        String[] users = new String[count];
-        for (int i = 0; i < users.length; i++) {
+        int i = 0;
+        for (i = 0; i < users.length; i++) {
             if (users[i] != null) {
                 count++;
-                users[i] = user.getName();
             }
-
         }
-        return users;
+        String[] getUserNames = new String[count];
+        for (i = 0; i < getUserNames.length; i++) {
+            getUserNames[i] = users[i].getName();
+         }
+
+        return getUserNames;
     }
 
     public long[] getUserIds() {//получение массива id пользователей
-        User user = new User();
         int count = 0;
-        if (user.getId() != 0) {
-            count++;
+        int i = 0;
+        for (i = 0; i < users.length; i++) {
+            if (users[i] != null) {
+                count++;
+            }
         }
-        long[] users = new long[count];
-        for (int i = 0; i < users.length; i++ ) {
-            users[i] = user.getId();
+        long[] getUserIds = new long[count];
+        for (i = 0; i < getUserIds.length; i++) {
+            getUserIds[i] = users[i].getId();
         }
-        return users;
+
+        return getUserIds;
     }
 
         public String getUserNameById(long id) { //для получения имени пользователя, по его id
