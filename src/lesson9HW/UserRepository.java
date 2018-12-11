@@ -1,11 +1,17 @@
 package lesson9HW;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class UserRepository {
 
     private User[] users;
+
+    @Override
+    public String toString() {
+        return "UserRepository{" +
+                "users=" + Arrays.toString(users) +
+                '}';
+    }
 
     public UserRepository(User[] users) {
         this.users = users;
@@ -130,5 +136,49 @@ public class UserRepository {
     }
 
 
+    //User repository, part 4
+
+    /* напишите метод для добавления нового юзера в условную базу данных (массив):
+    User save(User user) - будет добавлять юзера и возвращать его
+    Eсли юзер уже есть в массиве, результат - null. Если размер массива не позволяет добавить больше элементов (все ячейки заняты) результат метода тоже null
+    Метод должен быть доступен всем
+    Используйте метод с предыдущих задач для нахождение юзера по id.
+    Только переменуйте его в findById(long id). Метод должен быть доступен, только внутри класса UserRepository */
+
+    public User save(User user) {
+
+        if (user == null) {
+            return null;
+        }
+        if (findById(user.getId()) != null) {
+            return null;
+        }
+        int index = 0;
+        for (User us : users) {
+            if (us == null) {
+                users[index] = user;
+                return users[index];
+            }
+            index++;
+        }
+        return null;
+//        User result = user;
+//        int count = 0;
+//        int i = 0;
+//        for (i = 0; i < users.length; i++) {
+//            if (users[i] != null) {
+//                count++;
+//            }
+//        }
+//        for (i = 0; i < users.length; i++) {
+//            if(users[i] != null && users[i].getId() == result.getId() || count == users.length + 1) {
+//                  result = null;
+//
+//            } else {
+//                 users[i] = result;
+//             }
+//        }
+//       return result;
+    }
 
 }
