@@ -162,23 +162,49 @@ public class UserRepository {
             index++;
         }
         return null;
-//        User result = user;
-//        int count = 0;
-//        int i = 0;
-//        for (i = 0; i < users.length; i++) {
-//            if (users[i] != null) {
-//                count++;
-//            }
-//        }
-//        for (i = 0; i < users.length; i++) {
-//            if(users[i] != null && users[i].getId() == result.getId() || count == users.length + 1) {
-//                  result = null;
-//
-//            } else {
-//                 users[i] = result;
-//             }
-//        }
-//       return result;
+
+    }
+
+    //User repository, part 5
+
+    /* В продолжении практических задач, в классе UserRepository, напиши методы для удаления и обновления юзера в условной базе данных (массиве):
+    User update(User user) - будет обновлять текущего юзера в массиве (перезаписывать) и возвращать его. Если юзера нет, результат метода null
+    void delete(long id)- удаляет юзера с массива
+    Методы должны быть доступны всем
+    Используйте метод findById(long id) с предыдущих задач для нахождение юзера по id.
+    Метод должен быть доступен, только внутри класса UserRepository
+    В этой задаче так же нужно сабмитить класс User, созданный в одной из предудыщих задач урока
+     */
+    public User update(User user) {
+
+        if (findById(user.getId()) == null) {
+            return null;
+        }
+        int index = 0;
+        for (User us : users) {
+            us = users[index];
+            if (us != null && findById(us.getId()) == us) {
+                 users[index] = user;
+                 break;
+            }
+            index++;
+        }
+
+        return user;
+    }
+
+    public void delete(long id) {
+
+
+
+        int index = 0;
+        for (User us : users) {
+            if (us != null && us.getId() == id ) {
+                users[index] = null;
+            }
+            index++;
+        }
+
     }
 
 }

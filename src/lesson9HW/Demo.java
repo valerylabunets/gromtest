@@ -22,8 +22,16 @@ public class Demo {//mmmmmmmm
 //        System.out.println(userRepository.getUserByName("Petro"));
        // System.out.println(userRepository.getUserById(331));
        // System.out.println(userRepository.getUserBySessionId("009"));
-        System.out.println(userRepository.save(user100));
+        //System.out.println(userRepository.save(user100));
 
+//        User user8 = new User(222,"Pet","022");
+//        System.out.println(userRepository.update(user8));
+        //System.out.println(Arrays.toString(users));
+
+
+
+        userRepository.delete(111);
+        System.out.println(Arrays.toString(users));
 
 
     }
