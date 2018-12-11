@@ -92,7 +92,7 @@ public class UserRepository {
     }
 
     //нахождение юзера по id
-    private User findById(long id) {
+    public User findById(long id) {
         int count = 0;
         int i = 0;
         for (i = 0; i < users.length; i++) {
