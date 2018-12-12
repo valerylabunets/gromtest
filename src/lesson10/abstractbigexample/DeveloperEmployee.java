@@ -7,6 +7,6 @@ public class DeveloperEmployee extends Employee{
     void paySalary() {
         int newBalance = getBankAccount().getBalance() + getSalaryPerMonth() +1000;
         getBankAccount().setBalance(newBalance);
-        super.paySalary();
+        //super.paySalary();
     }
 }
