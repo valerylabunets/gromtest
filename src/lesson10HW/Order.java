@@ -26,7 +26,8 @@ public abstract class Order {
 
     abstract void calculatePrice();
 
-    void confirmShipping() {
+    void confirmShipping() {/* А так же обычный метод confirmShipping()который проставляет дату доставки в текущую,
+                            если она еще не проставлена*/
 
     }
 
