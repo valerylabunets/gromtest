@@ -28,7 +28,7 @@ public abstract class Order {
 
     void confirmShipping() {/* А так же обычный метод confirmShipping()который проставляет дату доставки в текущую,
                             если она еще не проставлена*/
-
+        dateShipped = new Date();
     }
 
     public String getItemName() {

@@ -1,6 +1,6 @@
 package lesson10HW;
 
-public class Customer { /* Класс Customerописывает клиента, который производит заказ. Его поля:
+public class Customer { /* Класс Customer описывает клиента, который производит заказ. Его поля:
 String name
 String city
 String gender (допустимые значения - Мужской, Женский; валидировать это не надо, гарантируется что значения тут правильные)

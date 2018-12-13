@@ -26,11 +26,36 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
 
     @Override
     void validateOrder() {
+        if ((getShipFromCity() != "Kiev" || getShipFromCity() != "Kharkov" || getShipFromCity() != "Dnepr" || getShipFromCity() != "Odessa")
+                || (getShipToCity() != "Kiev" || getShipToCity() != "Kharkov" || getShipToCity() != "Dnepr" || getShipFromCity() != "Odessa")
+                || (getBasePrice() < 100)
+                || (getCustomerOwned().getGender() != "fimale"))
+        {
+            System.out.println("Order is impossible");
+            //throw new Exception("Order is impossible");
+        }
 
     }
 
     @Override
     void calculatePrice() {
+        if (getBasePrice() > 1000) {
+            if (getShipToCity() != "Kiev" || getShipToCity() != "Odessa") {
+                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
+                setTotalPrice(totalPrice - totalPrice*0.05);
+            } else {
+                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
+                setTotalPrice(totalPrice - totalPrice*0.05);
+            }
+        } else {
+            if (getShipToCity() != "Kiev" || getShipToCity() != "Odessa") {
+                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
+                setTotalPrice(totalPrice);
+            } else {
+                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
+                setTotalPrice(totalPrice);
+            }
+         }
 
     }
 }

@@ -22,11 +22,25 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
 
     @Override
     void validateOrder() {
+        if (getShipFromCity() != "Kiev"
+                || getShipFromCity() != "Lvov"
+                || getBasePrice() < 500
+                || getCustomerOwned().getName() == "Test")
+        {
+            System.out.println("Order is impossible");
+        }
 
     }
 
     @Override
     void calculatePrice() {
 
+        if (getBasePrice() < 5000) {
+            double totalPrice = getBasePrice() + getBasePrice() * 0.05;
+            setTotalPrice(totalPrice);
+        } else {
+            double totalPrice = getBasePrice() + getBasePrice() * 0.02;
+            setTotalPrice(totalPrice);
+        }
     }
 }
