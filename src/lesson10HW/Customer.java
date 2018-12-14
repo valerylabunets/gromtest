@@ -9,6 +9,12 @@ String gender (допустимые значения - Мужской, Женс�
     private String city;
     private String gender;
 
+    public Customer(String name, String city, String gender) {
+        this.name = name;
+        this.city = city;
+        this.gender = gender;
+    }
+
     public String getName() {
         return name;
     }

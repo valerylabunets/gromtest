@@ -13,7 +13,7 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
                                           расчет цены
                                           Коммисия за доставку - 5% от суммы заказа если сумма меньше 5000 и 2% в других случаях */
 
-    public String furnitureCode;
+    private String furnitureCode;
 
     public FurnitureOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, String furnitureCode) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
@@ -27,7 +27,8 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
                 || getBasePrice() < 500
                 || getCustomerOwned().getName() == "Test")
         {
-            System.out.println("Order is impossible");
+            setDateConfirmed(new Date());
+            //System.out.println("Order is impossible");
         }
 
     }

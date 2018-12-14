@@ -17,19 +17,19 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
                                                за доставку - 15% от суммы заказа. В других случаях 10%. Так же если цена больше
                                                1000 то скидка на заказ 5% после оплаты комиссии за доставку*/
 
-    public int guaranteeMonts;
+    private int guaranteeMonths;
 
-    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonts) {
+    public ElectronicsOrder(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned, int guaranteeMonths) {
         super(itemName, dateCreated, shipFromCity, shipToCity, basePrice, customerOwned);
-        this.guaranteeMonts = guaranteeMonts;
+        this.guaranteeMonths = guaranteeMonths;
     }
 
     @Override
     void validateOrder() {
-        if ((getShipFromCity() != "Kiev" || getShipFromCity() != "Kharkov" || getShipFromCity() != "Dnepr" || getShipFromCity() != "Odessa")
-                || (getShipToCity() != "Kiev" || getShipToCity() != "Kharkov" || getShipToCity() != "Dnepr" || getShipFromCity() != "Odessa")
-                || (getBasePrice() < 100)
-                || (getCustomerOwned().getGender() != "fimale"))
+        if ((getShipFromCity() == "Kiev" || getShipFromCity() == "Kharkov" || getShipFromCity() == "Dnepr" || getShipFromCity() == "Odessa")
+                || (getShipToCity() == "Kiev" || getShipToCity() == "Kharkov" || getShipToCity() == "Dnepr" || getShipFromCity() == "Odessa")
+                || (getBasePrice() >= 100)
+                || (getCustomerOwned().getGender() == "fimale"))
         {
             setDateConfirmed(new Date());
             //System.out.println("Order is impossible");
@@ -56,7 +56,7 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
                 double totalPrice = getBasePrice() + getBasePrice() * 0.10;
                 setTotalPrice(totalPrice);
             }
-         }
+        }
 
     }
 }
