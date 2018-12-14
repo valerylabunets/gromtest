@@ -31,7 +31,8 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
                 || (getBasePrice() < 100)
                 || (getCustomerOwned().getGender() != "fimale"))
         {
-            System.out.println("Order is impossible");
+            setDateConfirmed(new Date());
+            //System.out.println("Order is impossible");
             //throw new Exception("Order is impossible");
         }
 
