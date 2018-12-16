@@ -22,10 +22,10 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
 
     @Override
     void validateOrder() {
-        if (getShipFromCity() != "Kiev"
-                || getShipFromCity() != "Lvov"
+        if (getShipFromCity() != "Киев"
+                || getShipFromCity() != "Львов"
                 || getBasePrice() < 500
-                || getCustomerOwned().getName() == "Test")
+                || getCustomerOwned().getName() == "Тест")
         {
             setDateConfirmed(new Date());
             //System.out.println("Order is impossible");

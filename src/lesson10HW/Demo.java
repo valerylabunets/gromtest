@@ -7,15 +7,15 @@ public class Demo {
                                                Order. Вызовите у них все три метода в правильной очередности */
 
         //Customer customer1 = new Customer();
-        ElectronicsOrder electronicsOrder1 = new ElectronicsOrder("testElectr1", new Date(), "Odessa"
-                ,"Kharkov", 100, new Customer("Ivan", "Dnepr", "male"), 12);
-        ElectronicsOrder electronicsOrder2 = new ElectronicsOrder("testElectr2", new Date(), "Dnepr"
-                , "Kiev", 200, new Customer("Olga", "Lvov", "fimale"), 24);
+        ElectronicsOrder electronicsOrder1 = new ElectronicsOrder("testElectr1", new Date(), "Одесса"
+                ,"Харьков", 100, new Customer("Ivan", "Днепр", "мужской"), 12);
+        ElectronicsOrder electronicsOrder2 = new ElectronicsOrder("testElectr2", new Date(), "Днепр"
+                , "Киев", 200, new Customer("Olga", "Львов", "женский"), 24);
 
-        FurnitureOrder furnitureOrder1 = new FurnitureOrder("testFurnit1", new Date(), "Odessa"
-                , "Lvov", 500, new Customer("Ben", "Odessa", "male"), "111");
-        FurnitureOrder furnitureOrder2 = new FurnitureOrder("testFurnit1", new Date(), "Kharkov"
-                , "Kiev", 600, new Customer("Marta", "Kiev", "fimale"), "222");
+        FurnitureOrder furnitureOrder1 = new FurnitureOrder("testFurnit1", new Date(), "Одесса"
+                , "Львов", 500, new Customer("Ben", "Одесса", "мужской"), "111");
+        FurnitureOrder furnitureOrder2 = new FurnitureOrder("testFurnit1", new Date(), "Харьков"
+                , "Киев", 600, new Customer("Marta", "Киев", "женский"), "222");
 
 
         electronicsOrder1.validateOrder();

@@ -26,10 +26,10 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
 
     @Override
     void validateOrder() {
-        if ((getShipFromCity() == "Kiev" || getShipFromCity() == "Kharkov" || getShipFromCity() == "Dnepr" || getShipFromCity() == "Odessa")
-                || (getShipToCity() == "Kiev" || getShipToCity() == "Kharkov" || getShipToCity() == "Dnepr" || getShipFromCity() == "Odessa")
+        if ((getShipFromCity() == "Киев" || getShipFromCity() == "Харьков" || getShipFromCity() == "Днепр" || getShipFromCity() == "Одесса")
+                || (getShipToCity() == "Киев" || getShipToCity() == "Харьков" || getShipToCity() == "Днепр" || getShipFromCity() == "Одесса")
                 || (getBasePrice() >= 100)
-                || (getCustomerOwned().getGender() == "fimale"))
+                || (getCustomerOwned().getGender() == "женский"))
         {
             setDateConfirmed(new Date());
             //System.out.println("Order is impossible");
@@ -41,7 +41,7 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
     @Override
     void calculatePrice() {
         if (getBasePrice() > 1000) {
-            if (getShipToCity() != "Kiev" || getShipToCity() != "Odessa") {
+            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
                 double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
                 setTotalPrice(totalPrice - totalPrice*0.05);
             } else {
@@ -49,7 +49,7 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
                 setTotalPrice(totalPrice - totalPrice*0.05);
             }
         } else {
-            if (getShipToCity() != "Kiev" || getShipToCity() != "Odessa") {
+            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
                 double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
                 setTotalPrice(totalPrice);
             } else {
