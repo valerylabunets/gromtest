@@ -29,7 +29,7 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
         if ((getShipFromCity() == "Киев" || getShipFromCity() == "Харьков" || getShipFromCity() == "Днепр" || getShipFromCity() == "Одесса")
                 || (getShipToCity() == "Киев" || getShipToCity() == "Харьков" || getShipToCity() == "Днепр" || getShipFromCity() == "Одесса")
                 || (getBasePrice() >= 100)
-                || (getCustomerOwned().getGender() == "женский"))
+                || (getCustomerOwned().getGender() == "Женский"))
         {
             setDateConfirmed(new Date());
             //System.out.println("Order is impossible");

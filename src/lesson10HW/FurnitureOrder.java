@@ -22,9 +22,9 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
 
     @Override
     void validateOrder() {
-        if (getShipFromCity() != "Киев"
-                || getShipFromCity() != "Львов"
-                || getBasePrice() < 500
+        if (getShipFromCity() == "Киев"
+                || getShipFromCity() == "Львов"
+                || getBasePrice() >= 500
                 || getCustomerOwned().getName() == "Тест")
         {
             setDateConfirmed(new Date());
