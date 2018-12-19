@@ -21,11 +21,11 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
     }
 
     @Override
-    void validateOrder() {
-        if (getShipFromCity() == "Киев"
-                || getShipFromCity() == "Львов"
-                || getBasePrice() >= 500
-                || getCustomerOwned().getName() != "Тест")
+    public void validateOrder() {
+        if ((getShipFromCity() == "Киев"
+                || getShipFromCity() == "Львов")
+                && getBasePrice() >= 500
+                && getCustomerOwned().getName() != "Тест")
         {
             setDateConfirmed(new Date());
             //System.out.println("Order is impossible");
@@ -34,7 +34,7 @@ public class FurnitureOrder extends Order { /* Класс FurnitureOrder опи�
     }
 
     @Override
-    void calculatePrice() {
+    public void calculatePrice() {
 
         if (getBasePrice() < 5000) {
             double totalPrice = getBasePrice() + getBasePrice() * 0.05;

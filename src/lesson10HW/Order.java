@@ -22,9 +22,9 @@ public abstract class Order {
         this.customerOwned = customerOwned;
     }
 
-    abstract void validateOrder();
+    public abstract void validateOrder();
 
-    abstract void calculatePrice();
+    public abstract void calculatePrice();
 
     void confirmShipping() {/* А так же обычный метод confirmShipping()который проставляет дату доставки в текущую,
                             если она еще не проставлена*/
