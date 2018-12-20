@@ -40,23 +40,27 @@ public class ElectronicsOrder extends Order { /* Класс ElectronicsOrder о�
 
     @Override
     public void calculatePrice() {
-        if (getBasePrice() > 1000) {
-            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
-                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
-                setTotalPrice(totalPrice - totalPrice*0.05);
-            } else {
-                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
-                setTotalPrice(totalPrice - totalPrice*0.05);
-            }
-        } else {
-            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
-                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
-                setTotalPrice(totalPrice);
-            } else {
-                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
-                setTotalPrice(totalPrice);
-            }
-        }
+        double commission = getShipToCity() != null && (getShipToCity() == "Киев" || getShipToCity() == "Одесса") ?
+                getBasePrice() * 0.10 : getBasePrice() * 0.15;
+        double bonus  = getBasePrice() > 1000 ? (getBasePrice() + commission) * 0.05 : 0;
+        setTotalPrice(getBasePrice() + commission - bonus);
+//        if (getBasePrice() > 1000) {
+//            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
+//                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
+//                setTotalPrice(totalPrice - totalPrice*0.05);
+//            } else {
+//                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
+//                setTotalPrice(totalPrice - totalPrice*0.05);
+//            }
+//        } else {
+//            if (getShipToCity() != "Киев" || getShipToCity() != "Одесса") {
+//                double totalPrice = (getBasePrice() + getBasePrice() * 0.15);
+//                setTotalPrice(totalPrice);
+//            } else {
+//                double totalPrice = getBasePrice() + getBasePrice() * 0.10;
+//                setTotalPrice(totalPrice);
+//            }
+//        }
 
     }
 }
